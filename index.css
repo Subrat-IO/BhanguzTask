@@ -1409,3 +1409,32 @@ footer {
 .Logos{
   color: white;
 }
+
+
+.SaySection {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  transition: transform 0.3s ease-out;
+}
+
+.Letstalk{
+  font-weight: 900;
+  font-size: 4rem;
+  font-weight: bolder;
+}
+.Letstalk span{
+  background-color: black;
+  padding: 1.5rem;
+  color: white;
+  border-radius: 1rem;
+}
+.SaySection img{
+  height: 70px;
+  width: 200px;
+  margin-bottom: 2.5rem;
+  margin-right: -1rem;
+  
+}

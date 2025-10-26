@@ -20,23 +20,29 @@ const dots = document.querySelectorAll('.dot');
 let currentIndex = 0;
 
 function updateSlider() {
-  const slideWidth = slides[0].getBoundingClientRect().width + 20; // including gap
+  const slideWidth = slides[0].getBoundingClientRect().width + 20; 
   track.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
   
   dots.forEach(dot => dot.classList.remove('active'));
   dots[currentIndex].classList.add('active');
 }
 
-// Auto slide every 3 seconds
 setInterval(() => {
   currentIndex = (currentIndex + 1) % slides.length;
   updateSlider();
 }, 3000);
 
-// Dot click
 dots.forEach((dot, index) => {
   dot.addEventListener('click', () => {
     currentIndex = index;
     updateSlider();
   });
+});
+
+window.addEventListener('scroll', () => {
+  const saySection = document.querySelector('.SaySection');
+  const scrollY = window.scrollY;
+  
+  const offset = Math.min(scrollY * 0.3, 100); 
+  saySection.style.transform = `translateX(${offset}px)`;
 });
